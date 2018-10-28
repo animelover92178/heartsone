@@ -1,0 +1,18 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>
+        List Item
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <app-card-list 
+    *ngFor ="let carddecksingle of cardDeck " 
+    [lists]="carddecksingle.type" 
+    [name]="carddecksingle.name"
+    [navigateTo]="generateUrl"
+    >
+  </app-card-list>
+  
+  </ion-content>

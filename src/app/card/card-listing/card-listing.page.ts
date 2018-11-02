@@ -16,6 +16,7 @@ export class CardListingPage {
   cards:Card[] = [];
   copyOfCards:Card[] = [];
   loader:any;
+  isLoading:boolean=false;
   constructor(private route:ActivatedRoute,private cardService:CardService,private loadCtrl:LoaderService,private toastService:ToastService) { }
   private getCard(){
     this.loadCtrl.presentLoading();
@@ -46,5 +47,16 @@ export class CardListingPage {
   }
   hydratedSearch(cards:Card[]){
       this.cards =cards;
+      this.isLoading =false;
+  }
+  searchStarted(){
+    this.isLoading = true;
+  }
+  favoriteCard(cards:Card){
+    if(cards.favorite){
+      cards.favorite = false;
+    }else{
+      cards.favorite = true;
+    }
   }
 }

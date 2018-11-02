@@ -12,17 +12,22 @@
 <ion-content padding>
 <app-search 
 (searchCompleated)="hydratedSearch($event)" 
+(searchStarted)="searchStarted()"
 [items]="copyOfCards"
 [filteredProperty]="name"
 >
 </app-search>
+<ion-spinner text-center *ngIf="isLoading"></ion-spinner>
 <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
-    <ion-refresher-content></ion-refresher-content>
+    <ion-refresher-content ></ion-refresher-content>
   </ion-refresher>
   <ion-list *ngIf ="cards.length > 0">
     <ion-card *ngFor="let card of cards">
       <ion-card-header text-wrap>
-        <ion-card-subtitle>{{card.cardSet}}</ion-card-subtitle>
+        <ion-card-subtitle>
+          {{card.cardSet}}
+          <ion-icon  (click)="favoriteCard(card)" [ngClass]="card.favorite ? 'favorite' :'normal' " name="flame" class="like-icon"></ion-icon>
+        </ion-card-subtitle>
         <ion-card-title>{{card.name}}</ion-card-title>
       </ion-card-header>
     

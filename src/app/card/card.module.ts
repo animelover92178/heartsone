@@ -8,6 +8,8 @@ import {CardListComponent}from './components/card-list-component';
 import {CardListingPage}from './card-listing/card-listing.page';
 import { CardDetailPage } from './card-detail/card-detail-page';
 import {SearchComponent} from '../shared/component/search/search.component';
+import {favoriteCardStorage}from './shared/card-favorite.store';
+
 @NgModule({
     imports:[
         IonicModule,
@@ -15,7 +17,8 @@ import {SearchComponent} from '../shared/component/search/search.component';
         HttpClientModule
     ],
     providers:[
-        CardService
+        CardService,
+        favoriteCardStorage
     ],
     declarations:[
         CardDeckPage,

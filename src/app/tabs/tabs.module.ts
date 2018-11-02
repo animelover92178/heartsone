@@ -11,6 +11,7 @@ import { ContactPageModule } from '../contact/contact.module';
 import { AboutPageModule } from '../about/about.module';
 import { HomePageModule } from '../home/home.module';
 import {CardDeckPageModule}from '../card/card.module';
+import {CardFavoritePageModule} from '../card/card-favorite/card-favorite.module';
 @NgModule({
   imports: [
     IonicModule,
@@ -20,7 +21,8 @@ import {CardDeckPageModule}from '../card/card.module';
     HomePageModule,
     AboutPageModule,
     ContactPageModule,
-    CardDeckPageModule
+    CardDeckPageModule,
+    CardFavoritePageModule
   ],
   declarations: [TabsPage]
 })

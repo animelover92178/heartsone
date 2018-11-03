@@ -15,8 +15,12 @@ export class CardDetailPage {
   constructor(private route:ActivatedRoute,private cardService:CardService,private loadCtrl:LoaderService,private alertService:AlertService) { }
   
   ionViewWillEnter(){
-   const cardId = this.route.snapshot.paramMap.get('cardId');
-    this.loadCtrl.presentLoading();
+    this.getCard();
+ 
+  }
+  private async getCard(){
+    const cardId = this.route.snapshot.paramMap.get('cardId');
+    await this.loadCtrl.presentLoading();
    
    this.cardService.getCardById(cardId).subscribe(
        (card:Card[])=>{
@@ -27,7 +31,6 @@ export class CardDetailPage {
         //    this.alertService.presentAlert("You Visit Detail Page");
         this.loadCtrl.dissmisLoading();
        })
- 
   }
   updateImage(){
       this.card.img = 'assets/images/DefaultCard.png';

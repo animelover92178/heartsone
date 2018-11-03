@@ -21,6 +21,7 @@ export class CardListingPage {
   favoriteCards:any = {};
   loader:any;
   isLoading:boolean=false;
+  limit:number = 3;
   subcription:Subscription
   constructor(private favoriteCardStore:favoriteCardStorage,private route:ActivatedRoute,private cardService:CardService,private loadCtrl:LoaderService,private toastService:ToastService) 
   { 
@@ -36,8 +37,8 @@ export class CardListingPage {
   ionViewDidLeave(){
     this.subcription.unsubscribe()
   }
-  private getCard(){
-    this.loadCtrl.presentLoading();
+  private async getCard(){
+    await this.loadCtrl.presentLoading();
     this.cardService.getCardByDeck(this.cardDeckGroup,this.cardDeck).subscribe(
       (cards)=>{
         console.log(cards);
@@ -74,6 +75,12 @@ export class CardListingPage {
   }
   searchStarted(){
     this.isLoading = true;
+  }
+  loadData(infiniteScroll){
+    setTimeout(()=>{
+      this.limit += 20;
+      infiniteScroll.target.complete();
+    },3000)
   }
   favoriteCard(cards:Card){
     // if(cards.favorite){

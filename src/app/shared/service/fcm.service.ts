@@ -25,6 +25,7 @@ export class FcmService{
             token,
             userId:'testUserId'
         }
+
         return deviceRef.doc(token).set(data);
     }
     oNotifications(){

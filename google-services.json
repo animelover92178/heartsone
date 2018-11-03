@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "794132821485",
+    "firebase_url": "https://ng-recipe-book-69bb2.firebaseio.com",
+    "project_id": "ng-recipe-book-69bb2",
+    "storage_bucket": "ng-recipe-book-69bb2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:794132821485:android:5e3e1a07eedaabc6",
+        "android_client_info": {
+          "package_name": "com.bayu.heartstonelib"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "794132821485-1t4n38ahuu8178nt5h3g5ap8q6skrlvq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3XFLJVVAjyHbNRhvMUaknqSTo9jhCboM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

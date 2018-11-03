@@ -11,8 +11,10 @@ import { AppComponent } from './app.component';
 import {LoaderService}from './shared/service/loader.service';
 import {AlertService}from './shared/service/alert.service';
 import {AngularFireModule}from '@angular/fire';
-import {AngularFirestore, AngularFirestoreModule}from '@angular/fire/firestore';
-import {Firebase} from '@ionic-native/firebase';
+import {AngularFirestoreModule}from '@angular/fire/firestore';
+import {Firebase}from '@ionic-native/firebase/ngx';
+import {FcmService}from './shared/service/fcm.service';
+
 const config ={
     apiKey: "AIzaSyCBitO8_DU75n93tp1NMbpIq-pGLZuPT6Y",
     authDomain: "ng-recipe-book-69bb2.firebaseapp.com",
@@ -41,6 +43,7 @@ const config ={
     SplashScreen,
     AlertService,
     Firebase,
+    FcmService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

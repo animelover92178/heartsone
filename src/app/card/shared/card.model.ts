@@ -9,6 +9,7 @@
         imgGold:string,
         name:string,
         cost:number,
+        favorite:boolean,
         attack:number,
         text:string,
         health:number,
